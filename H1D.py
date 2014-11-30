@@ -14,6 +14,7 @@ class H1D(object):
         self._hi = hi
 
         self._integral   = 0.0
+        self._variance   = 0.0
         self._nof_events = 0
 
         # Bin is defined to be a tuple of (float, int)
@@ -30,6 +31,7 @@ class H1D(object):
 
         self._nof_events += 1
         self._integral   += weight
+        self._variance   += weight*weight
 
         idx = self.find_bin(x)
 
