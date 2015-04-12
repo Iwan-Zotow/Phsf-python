@@ -18,9 +18,9 @@ class H1D(object):
         self._variance   = 0.0
         self._nof_events = 0
 
-        # Bin is defined to be a tuple of (float, int)
-        self._underflow = (0.0, 0)
-        self._overflow  = (0.0, 0)
+        # Bin is defined to be a tuple of (float, int, float)
+        self._underflow = (0.0, 0, 0.0)
+        self._overflow  = (0.0, 0, 0.0)
 
         self._data     = [ (0.0, 0, 0.0) for k in range(self._n)]
 
@@ -37,11 +37,13 @@ class H1D(object):
         idx = self.find_bin(x)
 
         if (idx < 0):
+#            print(x,weight)
             t = (self._underflow[H1D.DATA] + weight, self._underflow[H1D.NOE] + 1, self._underflow[H1D.VAR] + weight*weight)
             self._underflow = t
             return
 
         if (idx >= self._n):
+#            print(x,weight)
             t = (self._overflow[H1D.DATA] + weight, self._overflow[H1D.NOE] + 1, self._overflow[H1D.VAR] + weight*weight)
             self._overflow = t
             return

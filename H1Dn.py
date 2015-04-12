@@ -11,7 +11,7 @@ class H1Dn(H1D):
 
         n  = len(self._x) - 1 # one less bin for a give boundaries
         lo = self._x[0]
-        hi = self._x[n]
+        hi = self._x[-1]
 
         super(H1Dn, self).__init__(n, lo, hi)
 
