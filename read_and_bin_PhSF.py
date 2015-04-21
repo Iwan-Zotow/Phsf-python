@@ -13,8 +13,8 @@ def make_scale(nof_bins_hi2me):
     """
     """
     lo = 0.01
-    me = 1.17000000001
-    hi = 1.33000000001
+    me = 1.170001
+    hi = 1.330001
     
     # bins in hi-to-me region
     step = (hi - me)/float(nof_bins_hi2me)
@@ -48,6 +48,7 @@ def read_record_short(phsf):
     """
     Read MODE0 PhSF particle record
     """
+
     LATCH = struct.unpack('i', phsf.read(4))[0]
     E = struct.unpack('f', phsf.read(4))[0]
     X = struct.unpack('f', phsf.read(4))[0]
@@ -67,6 +68,7 @@ def read_record_long(phsf):
     """
     Read MODE2 PhSF particle record
     """
+
     LATCH = struct.unpack('i', phsf.read(4))[0]
     E = struct.unpack('f', phsf.read(4))[0]
     X = struct.unpack('f', phsf.read(4))[0]
@@ -93,7 +95,7 @@ def load_events(filename, nof_events = -1):
     load all photon events
     """
     
-    with open("../C25.egsphsp1", "rb") as phsf:
+    with open(filename, "rb") as phsf:
         mode = phsf.read(5)
         print(mode) # shall be MODE0 or MODE2
 
@@ -159,14 +161,25 @@ def load_events(filename, nof_events = -1):
                 events.append(event)
                 
         return (events, nof_photons, nof_electrons, nof_positrons)
+        
+def write_all_events(filename , events):
+    """
+    """
+    with open(filename, "wt") as f:
+        for e in events:
+            f.write('{0:15.4e} {1:15.4e} {2:15.4e} {3:15.4e} {4:15.4e} {5:15.4e} {6:15.4e} {7:15.4e}\n'.format(e[0], e[1], e[2], e[3], e[4], e[5], e[6], e[7]))
+            
+    return None
 
 scale = make_scale(5)
 #print(len(scale))
 #print(scale)
 
-(events, nof_photons, nof_electrons, nof_positrons) = load_events("../C25_updated.egsphsp1")
+(events, nof_photons, nof_electrons, nof_positrons) = load_events("../C25x.egsphsp1")
 
 print(len(events), nof_photons, nof_electrons, nof_positrons)
+
+#write_all_events("QQQ", events)
 
 he = H1Dn(scale)
 
@@ -221,4 +234,3 @@ plt.tick_params(axis='x', direction='out')
 plt.tick_params(axis='y', direction='out')
 
 plt.show()
-
