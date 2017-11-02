@@ -49,7 +49,7 @@ def load_events(filename, energy_thr = 0.01, nof_events = -1):
             WY = float(s[7])
             WZ = float(s[8])
 
-            e = (W,E,X,Y,Z,WX,WY,WZ)
+            e = (WT, E, X, Y, Z, WX, WY, WZ)
             events.append(e)
 
             k += 1
