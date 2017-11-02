@@ -1,0 +1,81 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DATA	../H1D.py	/^    DATA = 0 # data index$/;"	kind:variable	line:3
+H1D	../H1D.py	/^class H1D(object):$/;"	kind:class	line:1
+H1D.py	../H1D.py	1;"	kind:file	line:1
+H1Dn	../H1Dn.py	/^class H1Dn(H1D):$/;"	kind:class	line:3
+H1Dn.py	../H1Dn.py	1;"	kind:file	line:1
+H1Du	../H1Du.py	/^class H1Du(H1D):$/;"	kind:class	line:3
+H1Du.py	../H1Du.py	1;"	kind:file	line:1
+NOE	../H1D.py	/^    NOE  = 1 # number of events index$/;"	kind:variable	line:4
+VAR	../H1D.py	/^    VAR  = 2 # bin variance index$/;"	kind:variable	line:5
+W	../read_and_bin_PhSF.py	/^W = []$/;"	kind:variable	line:82
+X	../read_and_bin_PhSF.py	/^X = []$/;"	kind:variable	line:80
+Y	../read_and_bin_PhSF.py	/^Y = []$/;"	kind:variable	line:81
+__getitem__	../H1D.py	/^    def __getitem__(self, idx):$/;"	kind:member	line:56
+__init__	../H1D.py	/^    def __init__(self, n, lo, hi):$/;"	kind:member	line:8
+__init__	../H1Dn.py	/^    def __init__(self, x):$/;"	kind:member	line:9
+__init__	../H1Du.py	/^    def __init__(self, n, lo, hi):$/;"	kind:member	line:9
+beam_loader.py	../beam_loader.py	1;"	kind:file	line:1
+d	../read_and_bin_PhSF.py	/^    d = he[k]     # data from bin with index k$/;"	kind:variable	line:100
+data	../H1D.py	/^    def data(self):$/;"	kind:member	line:90
+fill	../H1D.py	/^    def fill(self, x, weight = 1.0):$/;"	kind:member	line:28
+find_bin	../H1Dn.py	/^    def find_bin(self, x):$/;"	kind:member	line:19
+find_bin	../H1Du.py	/^    def find_bin(self, x):$/;"	kind:member	line:15
+g	../H1Dn.py	/^    g = H1Dn([0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95])$/;"	kind:variable	line:54
+g	../H1Du.py	/^    g = H1Du(10, 0.1, 0.9)$/;"	kind:variable	line:40
+h	../H1Dn.py	/^    h = H1Dn([0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95])$/;"	kind:variable	line:55
+h	../H1Du.py	/^    h = H1Du(10, 0.1, 0.9)$/;"	kind:variable	line:41
+he	../read_and_bin_PhSF.py	/^he = H1Dn(scale)$/;"	kind:variable	line:68
+hi	../H1D.py	/^    def hi(self):$/;"	kind:member	line:72
+integral	../H1D.py	/^    def integral(self):$/;"	kind:member	line:75
+lo	../H1D.py	/^    def lo(self):$/;"	kind:member	line:69
+load_events	../beam_loader.py	/^def load_events(filename, nof_events = -1):$/;"	kind:function	line:53
+load_events	../text_loader.py	/^def load_events(filename, energy_thr = 0.01, nof_events = -1):$/;"	kind:function	line:3
+make_scale	../read_and_bin_PhSF.py	/^def make_scale(nof_bins_hi2me):$/;"	kind:function	line:12
+n	../read_and_bin_PhSF.py	/^n     = len(scale)$/;"	kind:variable	line:85
+nof_events	../H1D.py	/^    def nof_events(self):$/;"	kind:member	line:81
+norm	../H1Dn.py	/^    norm = g.integral()$/;"	kind:variable	line:66
+norm	../H1Dn.py	/^    norm = h.integral()$/;"	kind:variable	line:79
+norm	../H1Du.py	/^    norm = g.integral()$/;"	kind:variable	line:50
+norm	../H1Du.py	/^    norm = h.integral()$/;"	kind:variable	line:63
+norm	../read_and_bin_PhSF.py	/^norm  = 1.0\/he.integral()$/;"	kind:variable	line:86
+over	../H1Dn.py	/^    over = g.overflow()$/;"	kind:variable	line:74
+over	../H1Dn.py	/^    over = h.overflow()$/;"	kind:variable	line:87
+over	../H1Du.py	/^    over = g.overflow()$/;"	kind:variable	line:58
+over	../H1Du.py	/^    over = h.overflow()$/;"	kind:variable	line:71
+overflow	../H1D.py	/^    def overflow(self):$/;"	kind:member	line:87
+p1	../read_and_bin_PhSF.py	/^p1 = plt.bar(X, Y, W, color='r')$/;"	kind:variable	line:110
+read_and_bin_PhSF.py	../read_and_bin_PhSF.py	1;"	kind:file	line:1
+read_record_long	../beam_loader.py	/^def read_record_long(phsf):$/;"	kind:function	line:27
+read_record_short	../beam_loader.py	/^def read_record_short(phsf):$/;"	kind:function	line:7
+scale	../read_and_bin_PhSF.py	/^scale = he.x()$/;"	kind:variable	line:84
+scale	../read_and_bin_PhSF.py	/^scale = make_scale(5)$/;"	kind:variable	line:58
+size	../H1D.py	/^    def size(self):$/;"	kind:member	line:66
+size	../H1Dn.py	/^    size = g.size()$/;"	kind:variable	line:67
+size	../H1Dn.py	/^    size = h.size()$/;"	kind:variable	line:80
+size	../H1Du.py	/^    size = g.size()$/;"	kind:variable	line:51
+size	../H1Du.py	/^    size = h.size()$/;"	kind:variable	line:64
+step	../H1Du.py	/^    def step(self):$/;"	kind:member	line:29
+sum	../read_and_bin_PhSF.py	/^sum = 0.0$/;"	kind:variable	line:88
+text_loader.py	../text_loader.py	1;"	kind:file	line:1
+under	../H1Dn.py	/^    under = g.underflow()$/;"	kind:variable	line:69
+under	../H1Dn.py	/^    under = h.underflow()$/;"	kind:variable	line:82
+under	../H1Du.py	/^    under = g.underflow()$/;"	kind:variable	line:53
+under	../H1Du.py	/^    under = h.underflow()$/;"	kind:variable	line:66
+underflow	../H1D.py	/^    def underflow(self):$/;"	kind:member	line:84
+variance	../H1D.py	/^    def variance(self):$/;"	kind:member	line:78
+w	../read_and_bin_PhSF.py	/^        w = (scale[-1]-scale[-2])$/;"	kind:variable	line:94
+w	../read_and_bin_PhSF.py	/^        w = (scale[k+1] - scale[k])$/;"	kind:variable	line:97
+w	../read_and_bin_PhSF.py	/^    w = (he.lo() - x)$/;"	kind:variable	line:92
+write_all_events	../read_and_bin_PhSF.py	/^def write_all_events(filename , events):$/;"	kind:function	line:49
+x	../H1Dn.py	/^    def x(self):$/;"	kind:member	line:45
+x	../read_and_bin_PhSF.py	/^        x = he.hi()$/;"	kind:variable	line:95
+x	../read_and_bin_PhSF.py	/^        x = scale[k]$/;"	kind:variable	line:98
+x	../read_and_bin_PhSF.py	/^    x = 0.0$/;"	kind:variable	line:91
+y	../read_and_bin_PhSF.py	/^    y = d[0] \/ w  # first part of bin is collected weights$/;"	kind:variable	line:101
+y	../read_and_bin_PhSF.py	/^    y = y * norm$/;"	kind:variable	line:102
