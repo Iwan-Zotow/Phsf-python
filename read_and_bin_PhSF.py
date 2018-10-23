@@ -61,7 +61,10 @@ def main(pshf_name):
     scale = make_scale(5)
     #print(scale)
 
-    (events, nof_photons, nof_electrons, nof_positrons) = text_loader.load_events(pshf_name)
+    if "egsphsp1" in pshf_name:
+        (events, nof_photons, nof_electrons, nof_positrons) = beam_loader.load_events(pshf_name)
+    else:
+        (events, nof_photons, nof_electrons, nof_positrons) = text_loader.load_events(pshf_name)
     print(len(events), nof_photons, nof_electrons, nof_positrons)
 
     #write_all_events("QQQ", events)
@@ -122,8 +125,8 @@ def main(pshf_name):
 
 if __name__ == "__main__":
 
-    #fname = "/home/beamuser/C25.egsphsp1"
-    fname = "../PHSF"
+    fname = "/home/beamuser/C25GP3.egsphsp1"
+    #fname = "../PHSF"
 
     main(fname)
 
