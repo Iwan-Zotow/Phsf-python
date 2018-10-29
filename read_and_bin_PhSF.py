@@ -56,10 +56,9 @@ def write_all_events(filename , events):
     return None
 
 
-def main(pshf_name):
+def main(pshf_name: str, external_weight: float = 1.0):
 
     scale = make_scale(5)
-    #print(scale)
 
     if "egsphsp1" in pshf_name:
         (events, nof_photons, nof_electrons, nof_positrons) = beam_loader.load_events(pshf_name)
@@ -72,7 +71,7 @@ def main(pshf_name):
     he = H1Dn(scale)
 
     for e in events:
-        WT = e[0]
+        WT = e[0] * external_weight
         E  = e[1]
         he.fill(E, WT)
 
@@ -115,7 +114,7 @@ def main(pshf_name):
 
     plt.xlabel('Energy(MeV)')
     plt.ylabel('PDF of the photons')
-    plt.title('Energy distribution')
+    plt.title('Energy distribution, Last Half, C15')
 
     plt.grid(True);
     plt.tick_params(axis='x', direction='out')
@@ -125,9 +124,9 @@ def main(pshf_name):
 
 if __name__ == "__main__":
 
-    fname = "/home/beamuser/C25GP3.egsphsp1"
-    #fname = "../PHSF"
+    #fname = "/home/beamuser/C15GP3.egsphsp1"
+    fname = "../PHSF"
 
-    main(fname)
+    main(fname, 200./100.)
 
     sys.exit(0)
